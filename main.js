@@ -1,3 +1,5 @@
+const {generate_text} = require('./generator');
+
 roll = (d) => {
   return Math.floor(Math.random()*d)+1;
 };
@@ -38,19 +40,23 @@ armorValue.forEach((item) => {
   }
 });
 
-console.log(total);
-$("#character").html(generate_text("character"));
-$("#age").html(roll(20) + roll(20) + 10);
-$("#hp").html(roll(6));
-["str", "dex", "wil"].forEach((item, i) => {
-$("#" + item).html(roll(6) + roll(6) + roll(6));});
-$("#armor").html(armor);
-$("#helmet").html(helmet);
-$("#weapons").html(weapons);
-$("#tool").html(tool);
-$("#gear").html(gear);
-$("#trinket").html(trinket);
-$("#bonus").html(bonus);
-$("#armorTotal").html(armorTotal);
-$("#total").html(total);
-$("#gold").html(roll(6) + roll(6) + roll(6));
+let character = {
+  name:       generate_text("character-name"),
+  background: generate_text("character"),
+  age:        roll(20) + roll(20) + 10,
+  hp:         roll(6),
+  str:        roll(6) + roll(6) + roll(6),
+  dex:        roll(6) + roll(6) + roll(6),
+  wil:        roll(6) + roll(6) + roll(6),
+  armor:      armor + helmet,
+  weapons:    weapons,
+  tool:       tool,
+  gear:       gear,
+  trinket:    trinket,
+  bonus:      bonus,
+  armorTotal: armorTotal,
+  total:      total,
+  gold:       roll(6) + roll(6) + roll(6)
+};
+
+console.log(character);

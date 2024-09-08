@@ -1,5 +1,10 @@
+var gen_data = {};
+
+gen_data['character-name'] = [
+  '{name} {surname}'
+]
 gen_data['character'] = [
-  'You are <i> {name} {surname}</i>, formerly {background}.<br>You have {physique} physique, {skin} skin, {hair} hair, and {face} face.<br>You speak in a {speech} manner and wear {clothing} clothing.<br>You are {vice} yet {virtue}, and are generally regarded as {reputation}. <br>You have had the misfortune of being {misfortune}.'
+  'Formerly {background}.<br>You have {physique} physique, {skin} skin, {hair} hair, and {face} face.<br>You speak in a {speech} manner and wear {clothing} clothing.<br>You are {vice} yet {virtue}, and are generally regarded as {reputation}. <br>You have had the misfortune of being {misfortune}.'
 ]
 
 gen_data['name'] = [
@@ -438,3 +443,7 @@ gen_data['spellbook'] = [
 ,  'Wizard Mark'
 ,  'X-Ray Vision'
 ]
+
+module.exports = {
+  gen_data
+};
